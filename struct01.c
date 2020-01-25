@@ -22,16 +22,16 @@ struct Rect rect_tx;
 struct Rect rect_ty;
 
 //first rectangle
-rect_t.left = 100;
+rect_t.left = 275;
 rect_t.top = 80;
-rect_t.right = 300;
+rect_t.right = 190;
 rect_t.bottom = 150;
 
 //second rectangle
 rect_tx.left = 50;
 rect_tx.top = 50;
 rect_tx.right = 200;
-rect_tx.bottom = 100;
+rect_tx.bottom = 200;
 
 // initgraph initializes the graphics system by loading a graphics driver from disk 
 initgraph(&gdriver, &gmode, NULL); 
@@ -45,7 +45,9 @@ printf("Second rectangle: (%d,%d) (%d,%d)\n",rect_tx.left, rect_tx.top, rect_tx.
 
 //third rectangle = intersection of the two
 if(rect_t.left < rect_tx.left) { rect_ty.left = rect_tx.left; }
-else{ rect_ty.left = rect_t.left; }
+else{ 
+if(rect_t.left>rect_t.right){rect_ty.left = rect_tx.right;}
+else{rect_ty.left = rect_t.left; }}
 
 if(rect_t.top < rect_tx.top){ rect_ty.top = rect_tx.top; }
 else{ 
@@ -65,11 +67,10 @@ else{ rect_ty.bottom = rect_tx.bottom; }
 
 setcolor(RED);
 rectangle(rect_ty.left, rect_ty.top, rect_ty.right, rect_ty.bottom);
-//filling the intersection with color
 
 printf("Intersection: (%d,%d) (%d,%d)\n", rect_ty.left, rect_ty.top, rect_ty.right, rect_ty.bottom);
-
-floodfill(rect_ty.left + (rect_ty.right - rect_ty.left)/3, rect_ty.top+(rect_ty.bottom - rect_ty.top)/5, WHITE);
+//filling the intersection with color
+floodfill(rect_ty.left + (rect_ty.right - rect_ty.left)/10, rect_ty.top+(rect_ty.bottom - rect_ty.top)/10, WHITE);
 
 printf("Center point: %d %d\n", rect_ty.top+(rect_ty.bottom - rect_ty.top)/5, rect_ty.left + (rect_ty.right - rect_ty.left)/3);
 
