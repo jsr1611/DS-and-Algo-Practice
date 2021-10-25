@@ -1,2 +1,2 @@
-# algorithm_practice
-Algorithm practice
+# algorithm practice
+Algorithm practice solutions in Java and C
