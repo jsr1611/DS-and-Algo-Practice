@@ -7,13 +7,23 @@ it is possible to obtain a strictly increasing sequence
 by removing no more than one element from the array.
 Link: https://app.codesignal.com/arcade/intro/level-2/2mxbGwLzvkTCKAJMG
  */
-public class Main2 {
+class Main2 {
     public boolean almostIncreasingSequence(int[] sequence){
-        return false;
+        int swaps = 0;
+        for(int i=0; i < sequence.length-1; i++){
+            if(sequence[i+1] < sequence[i]){
+                swaps++;
+            }
+        }
+        if(swaps >= 2){
+            return false;
+        }
+        return true;
     }
 
     public static void main(String[] args) {
         Main2 main = new Main2();
-        main.almostIncreasingSequence();
+        boolean res = main.almostIncreasingSequence(new int[]{1, 3, 2});
+        System.out.println(res);
     }
 }
