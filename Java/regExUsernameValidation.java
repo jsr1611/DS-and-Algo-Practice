@@ -9,6 +9,7 @@ class UsernameValidator {
      * Write regular expression here.
      */
     public static final String regularExpression = "^[a-zA-Z$]\\w{7,29}$";
+    //LINK: https://www.geeksforgeeks.org/how-to-validate-a-username-using-regular-expressions-in-java/
 }
 
 
