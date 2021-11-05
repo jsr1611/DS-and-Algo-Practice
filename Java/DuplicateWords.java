@@ -1,3 +1,9 @@
+/*
+Author: Jumanazar Saidov
+Date: 2021.11.06
+Link: https://www.hackerrank.com/challenges/duplicate-word/problem
+ */
+
 import java.util.Scanner;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
