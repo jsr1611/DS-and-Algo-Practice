@@ -2,6 +2,7 @@
 Author: Jumanazar Saidov
 Date: 2021.11.08
 Link: https://www.hackerrank.com/challenges/30-binary-trees/problem
+Helpfull resource: https://www.geeksforgeeks.org/level-order-tree-traversal/
  */
 import java.util.*;
 import java.io.*;
@@ -30,6 +31,7 @@ class Solution{
                 queue.add(tempNode.right);
             }
         }
+
     }
 
     public static Node insert(Node root,int data){
