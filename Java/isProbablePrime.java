@@ -2,6 +2,8 @@
 Author: Jumanazar Saidov
 Date: 2021.11.10
 Link: https://www.hackerrank.com/challenges/java-primality-test/problem
+Useful resources: https://docs.oracle.com/javase/7/docs/api/java/math/BigInteger.html
+                  https://www.geeksforgeeks.org/biginteger-isprobableprime-method-in-java-with-examples/
  */
 import java.io.*;
         import java.math.*;
