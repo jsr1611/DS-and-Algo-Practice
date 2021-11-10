@@ -1,20 +1,12 @@
-/*
+package HackerRank;/*
 Author: Jumanazar Saidov
 Date: 2021.11.04
 Link: https://www.hackerrank.com/challenges/one-month-preparation-kit-time-conversion/problem?h_l=interview&playlist_slugs%5B%5D%5B%5D=preparation-kits&playlist_slugs%5B%5D%5B%5D=one-month-preparation-kit&utm_campaign=email_campaign&utm_medium=email&utm_source=email
  */
 
 import java.io.*;
-import java.math.*;
-import java.security.*;
-import java.text.*;
-import java.util.*;
-import java.util.concurrent.*;
-import java.util.function.*;
-import java.util.regex.*;
-import java.util.stream.*;
+
 import static java.util.stream.Collectors.joining;
-import static java.util.stream.Collectors.toList;
 
 class Result {
 

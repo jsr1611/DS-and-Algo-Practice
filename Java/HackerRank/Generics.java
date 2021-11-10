@@ -1,4 +1,4 @@
-/*
+package HackerRank;/*
 Author: Jumanazar Saidov
 Date: 2021.11.04
 Link:https://www.hackerrank.com/challenges/30-generics/problem?h_r=email&unlock_token=e3754b7c0d2eebc519f7e428617787c786b5d0ae&utm_campaign=30_days_of_code_continuous&utm_medium=email&utm_source=daily_reminder

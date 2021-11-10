@@ -1,4 +1,4 @@
-/*
+package HackerRank;/*
 Author: Jumanazar Saidov
 Date: 2021-10-29
 Definition:
@@ -8,11 +8,7 @@ Definition:
    link: https://www.hackerrank.com/challenges/30-scope/problem
  */
 
-import java.io.*;
 import java.util.*;
-import java.text.*;
-import java.math.*;
-import java.util.regex.*;
 
 
 class Difference {

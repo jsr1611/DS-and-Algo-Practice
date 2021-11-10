@@ -1,4 +1,4 @@
-/*
+package HackerRank;/*
 Author: Jumanazar Saidov
 Date: 2021-10-26
 Definition:
@@ -19,8 +19,6 @@ A char calculate() method that calculates a Student object's average
 and returns the grade character representative of their calculated average.
  link: https://www.hackerrank.com/challenges/30-inheritance/problem?h_r=email&unlock_token=2951f6d89bfdda49a9b5d66f09bcd09f8d1e1c3a&utm_campaign=30_days_of_code_continuous&utm_medium=email&utm_source=daily_reminder
  */
-
-import java.util.*;
 
 class Person {
     protected String firstName;

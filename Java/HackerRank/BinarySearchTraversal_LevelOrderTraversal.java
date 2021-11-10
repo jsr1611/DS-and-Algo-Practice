@@ -1,10 +1,11 @@
-/*
+package HackerRank;/*
 Author: Jumanazar Saidov
-Date: 2021.11.06
-Link: https://www.hackerrank.com/challenges/30-binary-search-trees/problem
+Date: 2021.11.08
+Link: https://www.hackerrank.com/challenges/30-binary-trees/problem
+Helpfull resource: https://www.geeksforgeeks.org/level-order-tree-traversal/
  */
 import java.util.*;
-import java.io.*;
+
 class Node{
     Node left,right;
     int data;
@@ -15,19 +16,20 @@ class Node{
 }
 class Solution{
 
-    public static int getHeight(Node root){
+    static void levelOrder(Node root){
         //Write your code here
-        if(root.left == null && root.right != null){
-            return 1 + Math.max(0, getHeight(root.right));
-        }
-        else if(root.right == null && root.left != null){
-            return 1 + Math.max(getHeight(root.left), 0);
-        }
-        if(root.right == null && root.left == null){
-            return 0;
-        }
-        else{
-            return 1+(Math.max(getHeight(root.left), getHeight(root.right)));
+        Queue<Node> queue = new LinkedList<Node>();
+        queue.add(root);
+
+        while(!queue.isEmpty()){
+            Node tempNode = queue.poll();
+            System.out.print(tempNode.data + " " );
+            if(tempNode.left != null){
+                queue.add(tempNode.left);
+            }
+            if(tempNode.right != null){
+                queue.add(tempNode.right);
+            }
         }
 
     }
@@ -57,7 +59,6 @@ class Solution{
             int data=sc.nextInt();
             root=insert(root,data);
         }
-        int height=getHeight(root);
-        System.out.println(height);
+        levelOrder(root);
     }
 }
