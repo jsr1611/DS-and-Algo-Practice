@@ -1,1 +1,1 @@
-Different algorithm solutions in Java
+Solutions for different problems in Java
