@@ -10,8 +10,14 @@ Problem description:
 
 This problem is about unit testing.
 Your company needs a function that meets the following requirements:
-For a given array of  integers, the function returns the index of the element with the minimum value in the array. If there is more than one element with the minimum value, it returns the smallest one.
-If an empty array is passed to the function, it raises an exception. A colleague has written this method. The implementation in Python is listed below. Implementations in other languages can be found in the code template.
+
+For a given array of  integers, the function returns the index of the element
+with the minimum value in the array. If there is more than one element
+with the minimum value, it returns the smallest one.
+If an empty array is passed to the function, it raises an exception.
+A colleague has written this method. The implementation in Python is listed below.
+Implementations in other languages can be found in the code template.
+
 
 def minimum_index(seq):
     if len(seq) == 0:
@@ -40,10 +46,10 @@ Note: The arrays are indexed from 0.
 
  */
 
-package HackerRank.ThirtyDaysOfCode;
+package ThirtyDaysOfCode;
 import java.util.*;
 
-public class Solution {
+class Solution {
 
     public static int minimum_index(int[] seq) {
         if (seq.length == 0) {
@@ -59,6 +65,34 @@ public class Solution {
     }
 
     //WRITE YOUR CODE BELOW THIS COMMENT ONLY
+
+
+
+    class TestDataEmptyArray{
+        static int[] get_array(){
+            return new int[0];
+        }
+    }
+
+    class TestDataUniqueValues{
+        static int[] get_array(){
+            return new int[]{1,3};
+        }
+        static int get_expected_result(){
+            return 0;
+        }
+    }
+
+    class TestDataExactlyTwoDifferentMinimums{
+        static int[] get_array(){
+            return new int[]{1,1,3};
+        }
+        static int get_expected_result(){
+            return 0;
+        }
+    }
+
+
 
 
     //WRITE YOUR CODE ABOVE THIS COMMENT ONLY
