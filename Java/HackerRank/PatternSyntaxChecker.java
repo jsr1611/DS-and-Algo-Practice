@@ -1,4 +1,4 @@
-/*
+package HackerRank;/*
 Author: Jumanazar Saidov
 Definition:
    Using Regex, we can easily match or search for patterns in a text.

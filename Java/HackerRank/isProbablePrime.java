@@ -1,4 +1,4 @@
-/*
+package HackerRank;/*
 Author: Jumanazar Saidov
 Date: 2021.11.10
 Link: https://www.hackerrank.com/challenges/java-primality-test/problem

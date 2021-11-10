@@ -1,10 +1,9 @@
-/*
+package HackerRank;/*
 Author: Jumanazar Saidov
 Date: 2021.11.08
 Link: https://www.hackerrank.com/challenges/30-linked-list-deletion/problem
 Helpfull resource: https://www.geeksforgeeks.org/remove-duplicates-from-an-unsorted-linked-list/
  */
-import java.io.*;
 import java.util.*;
 class Node{
     int data;

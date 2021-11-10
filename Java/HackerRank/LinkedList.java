@@ -1,9 +1,12 @@
+
 /*
 Author: Jumanazar Saidov
 Date: 2021.11.01
 Link: https://www.hackerrank.com/challenges/30-linked-list/problem
  */
-import java.io.*;
+
+package HackerRank;
+
 import java.util.*;
 
 class Node {

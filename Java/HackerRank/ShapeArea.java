@@ -1,4 +1,4 @@
-/*
+package HackerRank;/*
 Author: Jumanazar Saidov
 Date: 2021-10-27
 Definition: Compute the area of the polygon.

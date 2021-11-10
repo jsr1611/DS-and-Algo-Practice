@@ -1,8 +1,11 @@
+package HackerRank;
+
 /*
 AUthor: Jumanazar Saidov
 Date: 2021.11.10
 Link: https://www.hackerrank.com/challenges/java-1d-array-introduction/problem
  */
+
 import java.util.*;
 
 public class Solution {

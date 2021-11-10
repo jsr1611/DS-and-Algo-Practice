@@ -1,3 +1,5 @@
+package HackerRank;
+
 /*
 Author: Jumanazar Saidov
 Date: 2021.11.03

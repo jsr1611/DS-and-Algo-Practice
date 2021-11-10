@@ -1,4 +1,4 @@
-/*
+package HackerRank;/*
 Author: Jumanazar Saidov
 Date: 2021.11.08
 Link: https://www.hackerrank.com/challenges/30-running-time-and-complexity/problem

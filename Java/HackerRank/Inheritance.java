@@ -1,3 +1,4 @@
+
 /*
 Author: Jumanazar Saidov
 Date: 2021-10-26
@@ -19,8 +20,9 @@ A char calculate() method that calculates a Student object's average
 and returns the grade character representative of their calculated average.
  link: https://www.hackerrank.com/challenges/30-inheritance/problem?h_r=email&unlock_token=2951f6d89bfdda49a9b5d66f09bcd09f8d1e1c3a&utm_campaign=30_days_of_code_continuous&utm_medium=email&utm_source=daily_reminder
  */
+package HackerRank;
 
-import java.util.*;
+import java.util.Scanner;
 
 class Person {
     protected String firstName;
@@ -93,3 +95,20 @@ class Student extends Person{
 }
 
 class Solution {
+    public static void main(String[] args) {
+        Scanner scan = new Scanner(System.in);
+        String firstName = scan.next();
+        String lastName = scan.next();
+        int id = scan.nextInt();
+        int numScores = scan.nextInt();
+        int[] testScores = new int[numScores];
+        for(int i = 0; i < numScores; i++){
+            testScores[i] = scan.nextInt();
+        }
+        scan.close();
+
+        Student s = new Student(firstName, lastName, id, testScores);
+        s.printPerson();
+        System.out.println("Grade: " + s.calculate() );
+    }
+}

@@ -1,4 +1,4 @@
-/*
+package HackerRank;/*
 Author: Jumanazar Saidov
 Definition:
 Write a class called MyRegex which will contain a string pattern.
@@ -12,8 +12,6 @@ Leading zeros are allowed. The length of A, B, C, or D can't be greater than 3.
  */
 
 
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
 import java.util.Scanner;
 
 class Solution{

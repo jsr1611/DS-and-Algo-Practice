@@ -1,9 +1,11 @@
+package HackerRank;
+
 /*
 Author: Jumanazar Saidov
 Date: 2021.11.02
 Link: https://www.hackerrank.com/challenges/30-interfaces/problem?h_r=next-challenge&h_v=zen
  */
-import java.io.*;
+
 import java.util.*;
 
 interface AdvancedArithmetic{

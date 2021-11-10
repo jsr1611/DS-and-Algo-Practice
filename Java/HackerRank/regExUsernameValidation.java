@@ -1,4 +1,4 @@
-/*
+package HackerRank;/*
 Author: Jumanazar Saidov
 Date: 2021.11.06
 Link: https://www.hackerrank.com/challenges/valid-username-checker/problem
