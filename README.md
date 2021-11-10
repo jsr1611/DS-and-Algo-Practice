@@ -1,5 +1,6 @@
-# Data Structures and Algorithms Practice Starter
-This repository branch contains problem definitions without any solution. It is a good starting point for a student to fork this repo and then work on the problem and check for a possible correct answer on the "Solution" branch of this repository.
+# Data Structures and Algorithm Practice Solutions
+This branch contains solutions for the problems in the "Starter" branch of this repo. Here I will be posting my solutions for the DS and Algo problems in different platforms.
+Feel free to hit the issue or PR if you have an optimized version of the solution.
 
 
-Link for the solutions branch: [DS and Algo Practice Solutions](https://github.com/jsr1611/DS-and-Algo-Practice/tree/Solutions)
+Link for the problems branch: [DS and Algo Practice Starter](https://github.com/jsr1611/DS-and-Algo-Practice/tree/Starter)
