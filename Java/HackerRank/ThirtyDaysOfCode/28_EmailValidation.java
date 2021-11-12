@@ -1,3 +1,8 @@
+/*
+Author: Jumanazar Saidov
+Date: 2021.11.12
+Link: https://www.hackerrank.com/challenges/30-regex-patterns/problem
+ */
 
 
 import java.io.*;
