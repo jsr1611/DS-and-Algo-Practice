@@ -1,4 +1,10 @@
 /*
+
+Author: Jumanazar Saidov
+Date: 2022.05.06
+Link: https://app.codility.com/programmers/lessons/1-iterations/binary_gap/
+
+BinaryGap
 Find longest sequence of zeros in binary representation of an integer.
 
 Task description
@@ -55,4 +61,3 @@ public class BinaryGapSolution {
         return maxLen;
     }
 }
-
