@@ -6,12 +6,10 @@
  */
 
 public class IntegerToEnglish {
-    String[] ones = {"Zero", "One", "two", "three", "four", "five", "six", "seven", "eight", "nine","ten",
-            "eleven", "twelve", "thirteen", "fourteen", "fifteen", "sixteen", "seventeen", "eighteen", "nineteen"};
-    String[] tens = {"ten", "twenty", "thirty", "forty", "fifty", "sixty", "seventy", "eighty", "ninety"};
-    String[] hundreds = {"hundred", "thousand", "million", "billion"};
-//    Integer[] ones_n = {0, 1,2,3,4,5,6,7,8,9,10, 11,12,13,14,15,16,17,18,19};
-//    Integer[] tens_n = {10,20,30,40,50,60,70,80,90};
+    String[] ones = {"Zero", "One", "Two", "Three", "Four", "Five", "Six", "Seven", "Eight", "Nine","Ten",
+            "Eleven", "Twelve", "Thirteen", "Fourteen", "Fifteen", "Sixteen", "Seventeen", "Eighteen", "Nineteen"};
+    String[] tens = {"Ten", "Twenty", "Thirty", "Forty", "Fifty", "Sixty", "Seventy", "Eighty", "Ninety"};
+    String[] hundreds = {"Hundred", "Thousand", "Million", "Billion"};
     Integer[] hundreds_n = {100,1000,1000_000, 1000_000_000};
     public static void main(String[] args) {
         System.out.println(new IntegerToEnglish().solve(1353100335));
