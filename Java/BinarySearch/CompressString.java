@@ -22,22 +22,16 @@ public class CompressString {
         System.out.println(new CompressString().solve("aaaaaabbbccccaaaaddf"));
     }
     public String solve(String s) {
-        int len = s.length()-1, counter = 0;
+        int len = s.length()-1, counter = 1;
         StringBuilder start = new StringBuilder();
         StringBuilder end = new StringBuilder();
-
+        start.append(s.charAt(0));
+        end.append(s.charAt(len));
         while (len/2 >= counter){
-            if(start.length() == 0){
-                start.append(s.charAt(0));
-            }
-            else if(start.charAt(start.length()-1) != s.charAt(counter)){
+            if(start.charAt(start.length()-1) != s.charAt(counter)){
                 start.append(s.charAt(counter));
             }
-
-            if(end.length() == 0){
-                end.append(s.charAt(len));
-            }
-            else if(end.charAt(end.length()-1) != s.charAt(len-counter)){
+            if(end.charAt(end.length()-1) != s.charAt(len-counter)){
                 end.append(s.charAt(len-counter));
             }
             counter++;
