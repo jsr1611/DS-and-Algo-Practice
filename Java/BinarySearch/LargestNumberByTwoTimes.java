@@ -31,7 +31,17 @@ public class LargestNumberByTwoTimes {
         System.out.println(solve(arr));
     }
     public static boolean solve(int[] nums) {
-        Arrays.sort(nums);
-        return nums[nums.length-2] * 2 < nums[nums.length-1];
+        int largest = Integer.MIN_VALUE;
+        int secondLargest = Integer.MIN_VALUE;
+
+        for (int num : nums) {
+            if (num > largest) {
+                secondLargest = largest;
+                largest = num;
+            } else if (num > secondLargest) {
+                secondLargest = num;
+            }
+        }
+        return secondLargest * 2 < largest;
     }
 }
