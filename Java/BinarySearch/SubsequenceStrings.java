@@ -34,17 +34,15 @@ public class SubsequenceStrings {
         System.out.println(solve("aa", "aba"));
     }
     public static boolean solve(String s1, String s2) {
-        if(s2.length() < s1.length()) return false;
         if(s2.contains(s1)) return true;
-        int pointer = s2.indexOf(s1.charAt(0));
-        if(pointer < 0) return false;
-        int nextIndex;
-        for (int i = 1; i < s1.length(); i++) {
-            nextIndex = s2.indexOf(s1.charAt(i), pointer+1);
-            System.out.println(nextIndex);
-            if(nextIndex == -1) return false;
-            pointer = nextIndex;
+        if(s2.length() < s1.length()) return false;
+        int pointer = 0;
+        for (int i = 0; i < s2.length(); i++) {
+            if(s2.charAt(i) == s1.charAt(pointer)){
+                if(pointer == s1.length()-1 ) return true;
+                pointer++;
+            }
         }
-        return true;
+        return false;
     }
 }
