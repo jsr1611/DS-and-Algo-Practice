@@ -48,7 +48,6 @@ public class ZeroMatrix {
                 }
             }
         }
-
         for(int i=0; i < matrix.length; i++){
             for(int j=0; j < matrix[i].length; j++){
                 if(row[i] || col[j]){
@@ -56,7 +55,6 @@ public class ZeroMatrix {
                 }
             }
         }
-
         return matrix;
     }
 }
