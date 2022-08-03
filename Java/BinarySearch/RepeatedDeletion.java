@@ -26,41 +26,21 @@ public class RepeatedDeletion {
     }
     public static String solve(String s) {
         if(s.length()==0) return s;
-        Stack<String> stack = new Stack<>();
-        String c, last = "";
-        for(int i=0; i < s.length(); i++){
-            c = String.valueOf(s.charAt(i));
-            if(stack.size() != 0 && stack.peek().equals(c)){
-                last = stack.pop();
+        Stack<Character> stack = new Stack<>();
+        int i=0;
+        while (i < s.length()){
+            if(!stack.isEmpty() && stack.peek() == s.charAt(i)){
+                int j = i;
+                while (j < s.length() && stack.peek() == s.charAt(j)) j++;
+                stack.pop();
+                i = j;
             }
             else{
-                if(!last.equals(c)){
-                    last = stack.push(c);
-                }
+                    stack.push(s.charAt(i++));
             }
         }
-        return String.join("", stack);
+        StringBuilder sb = new StringBuilder();
+        for (char c: stack) sb.append(c);
+        return sb.toString();
     }
 }
-
-/*
-//ALTERNATIVE, BUT NOT COMPLETE YET
-if(s.length()==0) return s;
-        StringBuilder str = new StringBuilder();
-        char c, last = 0;
-        for(int i=0; i < s.length(); i++){
-            c = s.charAt(i);
-            if(str.length() != 0 && str.charAt(str.length()-1) == c){
-                str.deleteCharAt(str.length()-1);
-                if(str.length() != 0)
-                    last = str.charAt(str.length()-1);
-            }
-            else{
-                if(last != c){
-                    str.append(c);
-                    last = c;
-                }
-            }
-        }
-        return str.toString();
- */
