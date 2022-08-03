@@ -39,19 +39,12 @@ public class AStrictlyIncreasingLinkedList {
     }
 
     public static boolean solve(LLNode head) {
-        boolean increasing = true;
-        int num = head.val;
-        while (head.next != null){
-            LLNode child = head.next;
-            if(num < child.val){
-                head = child;
-                num = child.val;
-            }
-            else {
+        while (head.next != null) {
+            if (head.val >= head.next.val)
                 return false;
-            }
+            head = head.next;
         }
-        return increasing;
+        return true;
     }
 
 }
