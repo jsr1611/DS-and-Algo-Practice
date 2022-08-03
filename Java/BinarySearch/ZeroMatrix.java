@@ -38,29 +38,25 @@ public class ZeroMatrix {
         }
     }
     public static int[][] solve(int[][] matrix) {
-        int[][] arr = new int[matrix.length][matrix[0].length];
-        List<Integer> zeroCols = new LinkedList<>();
-        boolean zerosRow = false;
-        for (int i=0; i < matrix.length; i++) {
-            zerosRow = false;
-            for (int j = 0; j < matrix[i].length; j++) {
-                if (matrix[i][j] == 0) {
-                    colorCol(j, arr);
-                    zeroCols.add(j);
-                    Arrays.fill(arr[i], 0);
-                    zerosRow = true;
-                }
-                else {
-                    if(!zeroCols.contains(j) && !zerosRow)
-                        arr[i][j] = matrix[i][j];
+        boolean[] row = new boolean[matrix.length];
+        boolean[] col = new boolean[matrix[0].length];
+        for(int i=0; i < matrix.length;i++){
+            for(int j=0; j < matrix[i].length; j++){
+                if(matrix[i][j] == 0){
+                    row[i] = true;
+                    col[j] = true;
                 }
             }
         }
-        return arr;
-    }
-    private static void colorCol(int i, int[][] arr){
-        for(int k=0; k < arr.length; k++){
-            arr[k][i] = 0;
+
+        for(int i=0; i < matrix.length; i++){
+            for(int j=0; j < matrix[i].length; j++){
+                if(row[i] || col[j]){
+                    matrix[i][j] = 0;
+                }
+            }
         }
+
+        return matrix;
     }
 }
