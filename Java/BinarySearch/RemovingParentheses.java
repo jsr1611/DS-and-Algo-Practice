@@ -1,3 +1,5 @@
+import java.util.LinkedList;
+import java.util.List;
 import java.util.Stack;
 
 /**
@@ -13,26 +15,28 @@ import java.util.Stack;
 
 public class RemovingParentheses {
     public static void main(String[] args) {
-        System.out.println(solve("()())()"));
+        System.out.println(solve("))))(((("));
     }
     public static int solve(String s) {
-        int open = 0, closed = 0, total = 0;
-        char c;
-        Stack<Character> stack = new Stack<>();
+        int open = 0, closed = 0;
+        char c, last = '0';
         for (int i=0; i < s.length(); i++){
             c = s.charAt(i);
             if(c == '('){
-                stack.push(c);
+                last = c;
+                open++;
             }
             else {
-                if(stack.size() != 0 && stack.peek() == '('){
-                    stack.pop();
+                if(last == '('){
+                    open--;
+                    last = open > 0 ? '(' : '0';
                 }
                 else
-                    stack.push(c);
+                    closed++;
             }
         }
-        return stack.size();
+
+        return open+closed;
 
     }
 }
