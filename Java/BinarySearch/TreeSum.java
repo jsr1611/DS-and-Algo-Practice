@@ -33,22 +33,8 @@ public class TreeSum {
     }
     public static int solve(Tree root) {
         if(root == null) return 0;
-        Queue<Tree> que = new LinkedList<>();
-        List<Integer> nums = new ArrayList<>();
-        que.add(root);
-        while (!que.isEmpty()){
-            Tree node = que.poll();
-            nums.add(node.val);
-            if(node.left!=null){
-                que.add(node.left);
-            }
-            if(node.right!=null)
-                que.add(node.right);
-        }
-        int total = 0;
-        for (Integer num : nums) {
-            total+=num;
-        }
-        return total;
+        int left = solve(root.left);
+        int right = solve(root.right);
+        return root.val + left+right;
     }
 }
