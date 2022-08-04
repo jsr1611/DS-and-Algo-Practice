@@ -29,19 +29,16 @@ public class BinarySearchTreeValidation {
         System.out.println(solve(root));
     }
     public static boolean solve(BTree root) {
-        if(root==null) return true;
-        List<Integer> list = new ArrayList<>();
-        findInOrder(root, list);
-
-        for (int i = 1; i < list.size(); i++) {
-            if (list.get(i) <= list.get(i - 1))
-                return false;
-        }
-        return true;
+        return solve(root, Integer.MIN_VALUE, Integer.MAX_VALUE);
     }
-    private static void findInOrder(BTree root,List<Integer> list) {
-        if (root.left != null) {findInOrder(root.left,list);}
-        list.add(root.val);
-        if (root.right != null) {findInOrder(root.right,list);}
+
+    static boolean solve(BTree node, int MIN, int MAX) {
+        if (node == null)
+            return true;
+        if (node.val >= MIN && node.val <= MAX && solve(node.left, MIN, node.val)
+                && solve(node.right, node.val, MAX))
+            return true;
+        else
+            return false;
     }
 }
