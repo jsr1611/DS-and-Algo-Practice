@@ -34,12 +34,7 @@ public class InsertIntoLinkedList {
         int count = 1;
         while (true){
             if(pos == count){
-                if(node.next != null){
-                    node.next = new LLNode(val, node.next);
-                }
-                else {
-                    node.next = new LLNode(val, null);
-                }
+                node.next = new LLNode(val, node.next);
                 break;
             }
             node = node.next;
