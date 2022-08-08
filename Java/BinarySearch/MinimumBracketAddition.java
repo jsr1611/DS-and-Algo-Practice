@@ -12,18 +12,18 @@ public class MinimumBracketAddition {
         int i = 0;
         Stack<Character> stack = new Stack<>();
         char c;
-        while(s.length() > i){
+        while (s.length() > i) {
             c = s.charAt(i);
-            if(c == ')'){
-                if(stack.size() != 0 && stack.peek() == '(')
+            if (c == ')') {
+                if (stack.size() != 0 && stack.peek() == '(')
                     stack.pop();
                 else
                     stack.push(c);
-            }
-            else{
+            } else {
                 stack.push(c);
             }
             i++;
         }
         return stack.size();
+    }
 }
