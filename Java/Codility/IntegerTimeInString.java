@@ -1,0 +1,113 @@
+/**
+ * author: Jumanazar Said
+ * email: jumanazarsaidov@gmail.com
+ * date: 2022/07/15
+ * Question 1 out of 3. Toptal online coding
+ */
+
+
+public class IntegerTimeInString {
+    public static void main(String[] args) {
+        System.out.println(new IntegerTimeInString().solution(5341600));
+    }
+    public String solution(int X) {
+        // write your code in Java SE 8
+        String result = "";
+        int seconds = 0;
+        int minute = 60, mins = 0;
+        int hour = minute * 60, hours = 0;
+        int day = hour * 24, days = 0;
+        int week = day * 7, weeks = 0;
+
+        while (X > 0){
+            if(X > week){
+                weeks = X / week;
+                X = X - weeks * week;
+                result = String.format("%dw", weeks);
+            }else if(X > day){
+                days = X / day;
+                X = X - days * day;
+                result = result.concat(String.format("%d", days)+"d");
+            }
+            else if(X > hour){
+                hours = X / hour;
+                X = X - hours * hour;
+                if(result.contains("w") && result.contains("d")){
+                    String w = result.substring(0, result.indexOf("w"));
+                    int d = Integer.parseInt(result.substring(result.indexOf("w")+1, result.indexOf("d")));
+                    return w + "w" + (++d)+"d";
+                }else {
+                    result = result.concat(String.format("%d", hours)+"h");
+                }
+            }
+            else if(X > minute){
+                mins = X / minute;
+                X = X - mins * minute;
+                if(result.contains("w") && result.contains("d")
+                ) {
+                    String w = result.substring(0, result.indexOf("w"));
+                    int d = Integer.parseInt(result.substring(result.indexOf("w")+1, result.indexOf("d")));
+                    return w + "w" + (++d)+"d";
+                }
+                else if(result.contains("d") && result.contains("h")){
+                    String d = result.substring(0, result.indexOf("d"));
+                    int h = Integer.parseInt(result.substring(result.indexOf("d") + 1, result.indexOf("h")));
+                    return d + "d" + (++h) + "h";
+                }else {
+                    result = result.concat(String.format("%d", mins) + "m");
+                }
+            }
+            else {
+                seconds = X;
+                if(result.length() > 4){
+                    String w = "", d = "", h = "", m = "";
+                    if(result.contains("w")){
+                        w = result.substring(0, result.indexOf("w"));
+                        result = result.substring(result.indexOf("w")+1  );
+                    }
+                    if(result.contains("d")){
+                        d = result.substring(0, result.indexOf("d"));
+                        result = result.substring(result.indexOf("d")+1);
+                    }
+                    if(result.contains("h")){
+                        h = result.substring(0, result.indexOf("h"));
+                        result = result.substring(result.indexOf("h")+1);
+                    }
+                    if(result.contains("m")){
+                        m = result.substring(0, result.indexOf("m"));
+                    }
+                    String finalStr  = "";
+                    if(w.length() > 0){
+                        finalStr = w + "w";
+                    }
+                    if(d.length() > 0){
+                        if(finalStr.length() > 0){
+                            return finalStr + (Integer.parseInt(d) + 1) + "d";
+                        }
+                        else {
+                            finalStr = d + "d";
+                        }
+                    }
+                    if(h.length() > 0){
+                        if(finalStr.length() > 0){
+                            return finalStr + (Integer.parseInt(h) + 1) + "h";
+                        }else {
+                            finalStr = h + "h";
+                        }
+                    }
+                    if(m.length() > 0){
+                        if(finalStr.length() > 0){
+                            return finalStr + (Integer.parseInt(m) + 1) + "m";
+                        }
+                        return m + "m" + X + "s";
+                    }
+
+                }
+                else {
+                    result = result.concat(seconds+"s");
+                }
+            }
+        }
+        return result;
+    }
+}
