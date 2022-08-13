@@ -59,7 +59,6 @@ public class MinimumStack {
             minstack.push(val);
         }
         stack.push(val);
-
     }
     public int peek() {
         return stack.peek();
