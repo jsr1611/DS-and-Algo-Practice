@@ -27,45 +27,19 @@ public class IndexWithEqualLeftAndRightSums {
     }
 
     public static int solve(int[] nums) {
-        int n = nums.length;
+        int sum = 0;
+        for (int i : nums) sum += i;
 
-        int[] ps = new int[nums.length];
-        ps[0] = nums[0];
-        for(int i = 1 ; i < nums.length ; i++)
-        {
-            ps[i] = ps[i-1] + nums[i];
+        int leftSum = 0;
+        int rightSum = sum - nums[0];
+        if (leftSum == rightSum)
+            return 0;
+        for (int i = 1; i < nums.length; i++) {
+            rightSum -= nums[i];
+            leftSum += nums[i - 1];
+            if (leftSum == rightSum)
+                return i;
         }
-
-        int left_sum = 0;
-        int right_sum = 0;
-        int index = -1;
-
-        for(int i = 0 ; i < nums.length ; i++)
-        {
-            if(i == 0)
-            {
-                left_sum = 0;
-                right_sum = ps[n-1] - ps[0];
-            }
-            else
-            {
-                left_sum = ps[i-1];
-                right_sum = ps[n-1] - ps[i];
-            }
-
-
-            if(left_sum == right_sum)
-            {
-                index = i;
-                break;
-            }
-
-        }
-
-        if(index == -1)
-        {
-            return -1;
-        }
-        return index;
+        return -1;
     }
 }
