@@ -22,7 +22,8 @@
 public class DetectOnlyDuplicate {
     public int solve(int[] nums) {
         int len = nums.length-1;
-        int sum = len * (len + 1) / 2;  // Finding the sum of n integers (1,2,3,...,n)
+        int sum = len * (len + 1) / 2;
+        // Finding the sum of n integers (1,2,3,...,n)
         for(int num : nums){
             sum -= num;
         }
