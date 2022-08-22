@@ -25,25 +25,31 @@ public class SpecialProductList {
         System.out.println(Arrays.toString(solve(arr)));
     }
     public static int[] solve(int[] nums) {
-        int[] arr1 = new int[nums.length];
-        int counter = 0;
-        //int prefix = 1;
-        int suffix = nums.length-1;
-
-        for(int i=0; i < nums.length; ){
-            if(i+1 != suffix){
-                if(i+1 != counter){
-                    arr1[counter] = nums[i+1]*nums[suffix];
-                    suffix--;
+        int[] arr = new int[nums.length];
+        int total = 1;
+        int zeroIndex = -1;
+        boolean hasMoreZeroes = false;
+        for(int i=0; i < nums.length; i++){
+            if(nums[i] == 0) {
+                if(zeroIndex != -1){
+                    hasMoreZeroes = true;
+                    break;
+                }else{
+                    zeroIndex = i;
                 }
-                //prefix++;
-                i++;
-            }else {
-                counter++;
-                i = counter;
+            }else
+            {
+                total *= nums[i];
             }
-
         }
-        return arr1;
+        if(hasMoreZeroes) return arr;
+        if(zeroIndex != -1) {
+            arr[zeroIndex] = total;
+            return arr;
+        }
+        for(int i=0; i < nums.length; i++){
+            arr[i] = total / nums[i];
+        }
+        return arr;
     }
 }
