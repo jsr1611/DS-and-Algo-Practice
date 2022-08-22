@@ -42,3 +42,19 @@ public class BinarySearchTreeValidation {
             return false;
     }
 }
+//    List<Integer> inOrder = new ArrayList<>();
+//    findInOrder(root,inOrder);
+//
+//        for (int i = 1; i < inOrder.size(); i++) {
+//        if (inOrder.get(i) <= inOrder.get(i - 1))
+//        return false;
+//        }
+//        return true;
+//
+//        }
+//
+//public void findInOrder(TreeNode root,List<Integer> inOrder) {
+//        if (root.left != null) {findInOrder(root.left,inOrder);}
+//        inOrder.add(root.val);
+//        if (root.right != null) {findInOrder(root.right,inOrder);}
+//        }

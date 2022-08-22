@@ -3,9 +3,25 @@
   <component name="NewModuleRootManager" inherit-compiler-output="true">
     <exclude-output />
     <content url="file://$MODULE_DIR$">
-      <sourceFolder url="file://$MODULE_DIR$/Java" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Java/AdventOfCode" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Java/BinarySearch" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Java/Test" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Java/Codility" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Java/LeetCode" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Java/RoboContestUZ" isTestSource="false" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/Java/Test/algs4.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES>
+          <root url="jar://$MODULE_DIR$/Java/Test/algs4.jar!/" />
+        </SOURCES>
+      </library>
+    </orderEntry>
   </component>
 </module>

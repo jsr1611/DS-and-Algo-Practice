@@ -42,6 +42,8 @@ public class LargestNumberByTwoTimes {
                 secondLargest = num;
             }
         }
+
+        Arrays.sort(nums);
         return secondLargest * 2 < largest;
     }
 }

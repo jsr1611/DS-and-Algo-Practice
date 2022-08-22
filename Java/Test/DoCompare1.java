@@ -1,9 +1,18 @@
-
 /**
-* author: Jumanazar Said
-* email: jumanazarsaidov@gmail.com
-* date: 2022/08/10 16:26
-*/
+ * author: Jumanazar Said
+ * email: jumanazarsaidov@gmail.com
+ * date: 2022/08/10 16:26
+ */
 
-package PACKAGE_NAME;public class DoCompare1 {
+public class DoCompare1 {
+    public static void main(String[] args) {
+        String[] table = {"aa", "bb", "cc"};
+        for(String ss: table){
+            int ii = 0;
+            while (ii < table.length){
+                System.out.println(ss + ", " + ii);
+                ii++;
+            }
+        }
+    }
 }

@@ -19,7 +19,7 @@ import java.util.Stack;
 public class MinStack155 {
     Stack<Integer> stack;
     Stack<Integer> minstack;
-    public MinStack() {
+    public MinStack155() {
         stack = new Stack<>();
         minstack = new Stack<>();
     }

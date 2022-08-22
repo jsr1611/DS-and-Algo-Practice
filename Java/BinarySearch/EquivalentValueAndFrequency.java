@@ -7,6 +7,11 @@ import java.util.TreeSet;
  * author: Jumanazar Said
  * email: jumanazarsaidov@gmail.com
  * date: 2022/08/07 21:04
+ * desc: Given a list of integers nums, return whether there's an integer whose frequency in the list is same as its value.
+ *
+ * Constraints
+ *
+ * n ≤ 100,000 where n is the length of nums
  */
 
 public class EquivalentValueAndFrequency {

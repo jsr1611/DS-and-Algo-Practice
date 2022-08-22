@@ -2,7 +2,9 @@
  * author: Jumanazar Said
  * email: jumanazarsaidov@gmail.com
  * date: 2022/07/15
- * Question 2 out of 3. Toptal online coding
+ * Question 1 out of 3. Toptal online coding
+ * desc:
+ *
  */
 
 

@@ -39,6 +39,7 @@ public class AllocateDiscountsFairly {
     }
     public String[] solution(String S, String[] B){
 
+        return B;
     }
 
 }

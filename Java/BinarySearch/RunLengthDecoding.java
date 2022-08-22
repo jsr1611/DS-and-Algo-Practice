@@ -22,6 +22,7 @@ public class RunLengthDecoding {
         String sub = "";
         int num = 0;
         int numLength;
+        s.indexOf('c', 3);
         for(int i=0; i < s.length();){
             numLength=0;
             while ((numLength+i) < s.length() && Character.isDigit(s.charAt(i+numLength))) {

@@ -23,7 +23,6 @@ public class FirstMissingPositive {
         int smallestMissing = 1;
         nums = Arrays.stream(nums).filter(x -> x > 0).distinct().sorted().toArray();
         if(nums.length==0) return smallestMissing;
-        System.out.println(Arrays.toString(nums));
         for(int i=0; i<nums.length;i++){
             if(nums[i] > smallestMissing) return nums[i]-1;
             else {

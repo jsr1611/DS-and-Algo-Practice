@@ -26,23 +26,23 @@ class Tree {
 
 public class LevelOrderTraversal {
     public static void main(String[] args) {
-        Tree root = new Tree(0);
-        root.left = new Tree(5);
-        root.right = new Tree(9);
-        root.right.left = new Tree(1);
-        root.right.right = new Tree(3);
-        root.right.left.left = new Tree(4);
-        root.right.left.right = new Tree(2);
+        BTree root = new BTree(0);
+        root.left = new BTree(5);
+        root.right = new BTree(9);
+        root.right.left = new BTree(1);
+        root.right.right = new BTree(3);
+        root.right.left.left = new BTree(4);
+        root.right.left.right = new BTree(2);
         System.out.println(Arrays.toString(solve(root)));
     }
-    public static int[] solve(Tree root) {
+    public static int[] solve(BTree root) {
         int count = 0;
-        Queue<Tree> que = new LinkedList<>();
+        Queue<BTree> que = new LinkedList<>();
         Queue<Integer> nums = new LinkedList<>();
         que.add(root);
         nums.add(root.val);
         while(!que.isEmpty()){
-            Tree head = que.poll();
+            BTree head = que.poll();
             if(head.left != null){
                 nums.add(head.left.val);
                 count++;

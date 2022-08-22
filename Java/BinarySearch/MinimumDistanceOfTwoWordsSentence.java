@@ -23,6 +23,7 @@
 
 public class MinimumDistanceOfTwoWordsSentence {
     public int solve(String text, String word0, String word1) {
+
         int start = -1;
         int end = -1;
         int counter = 0, min = Integer.MAX_VALUE;

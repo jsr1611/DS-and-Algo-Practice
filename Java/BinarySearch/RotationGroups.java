@@ -28,7 +28,9 @@ import java.util.List;
 
 public class RotationGroups {
     public static void main(String[] args) {
-        String[] arr = {"abc", "xy", "yx", "z", "bca"};
+        String[] arr = {"abc", "xy", "yx", "z", "bca", "bac", "bac", "bac"};//{"abc", "xy", "yx", "z", "bca"};
+        //["abc", "xy", "yx", "z", "bca", "bac", "bac", "bac"]
+
         System.out.println(solve(arr));
     }
     public static int solve(String[] words) {

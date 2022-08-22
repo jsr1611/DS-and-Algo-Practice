@@ -19,12 +19,31 @@
 
 public class NextBinaryPermutation {
     public int solve(int n) {
-        int bitCount = Integer.bitCount(n);
-        int result = n+1;
-        while(true){
-            if(Integer.bitCount(result) == bitCount) return result;
-            else
-                result++;
+        int num_zeros = 0;
+        int num_ones = 0;
+
+        for (int i = 0; i < 31; i++) {
+            if ((n & (1 << i)) == 0)
+                num_zeros++;
+            else {
+                break;
+            }
         }
+        for (int i = num_zeros; i < 31; i++) {
+            if ((n & (1 << i)) != 0)
+                num_ones++;
+            else {
+                break;
+            }
+        }
+        // set the zero we found to one
+        n = n | (1 << (num_zeros + num_ones));
+
+        // set all the ones from the right of this bit to 0.
+        n = n & -(1 << (num_zeros + num_ones));
+
+        // set all the zeros to one
+        n = n | ((1 << (num_ones - 1)) - 1);
+        return n;
     }
 }
