@@ -22,14 +22,9 @@
 public class BottlesOfDrink {
     public int solve(int n) {
         int total = n;
-        int rem = 0;
         while(n > 2){
-
             total += (n/3);
-            rem = n%3;
-            n /= 3;
-            n+=rem;
-            rem = 0;
+            n = (n%3) + (n/3);
         }
         return total;
     }
