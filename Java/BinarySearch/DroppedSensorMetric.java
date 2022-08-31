@@ -22,14 +22,14 @@
 
 public class DroppedSensorMetric {
     public int solve(int[] a, int[] b){
-        for(int i=0; i < a.length; i++){
-            if(a[i]!=b[i]){
-                if(i+1 < a.length){
-                    if(a[i] == b[i+1]) return b[i];
-                    else return a[i];
-                }
-            }
+        int low=0, high=a.length-1;
+        while(low < high){
+            int mid = (low+high)/2;
+            if(a[mid]==b[mid])
+                low = mid+1;
+            else
+                high = mid;
         }
-        return 0;
+        return a[low + 1] == b[low] ? a[low] : b[low];
     }
 }
