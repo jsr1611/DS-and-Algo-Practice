@@ -1,4 +1,6 @@
 import java.util.Arrays;
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  * author: Jumanazar Said
@@ -19,10 +21,22 @@ import java.util.Arrays;
 
 public class ContainsDuplicate217 {
     public boolean containsDuplicate(int[] nums) {
+        /*
+        // Memory optimized approach with O(nlogn) time complexity and O(1) memory usage
         Arrays.sort(nums);
         int len = nums.length;
         for(int i=0; i < len-1; i++){
             if(nums[i] == nums[i+1]) return true;
+        }
+         */
+
+        // Time optimized approach with O(n) time complexity and memory usage
+        Map<Integer, Integer> map = new HashMap<>();
+        int len = nums.length;
+        for(int i=0; i < len; i++){
+            if(map.containsKey(nums[i])) return true;
+            else
+                map.put(nums[i], 0);
         }
         return false;
     }
