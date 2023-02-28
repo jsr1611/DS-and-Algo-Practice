@@ -1,7 +1,4 @@
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-import java.util.Queue;
+import java.util.*;
 
 /**
  * author: Jumanazar Said
@@ -28,14 +25,21 @@ public class PROBLEM1 {
         String[] arr = {"W>I", "R>L", "T>Z", "Z>E", "S>W", "E>R", "L>A", "A>N", "N>D", "I>T"};
         StringBuilder sb = new StringBuilder();
         Map<Character, Character[]> mymap = new HashMap();
+        List<Character> keys = new ArrayList<>();
+        List<Character> values = new ArrayList<>();
+
         char value = arr[0].charAt(2), letter= arr[0].charAt(0), start = arr[0].charAt(0);
         mymap.put(letter, new Character[]{letter, value});
+        keys.add(letter);
+        values.add(value);
         for(int i=1; i < arr.length; i++){
             value = arr[i].charAt(2);
             letter = arr[i].charAt(0);
-            if(mymap.containsKey(value) && mymap.get(value)[0] != letter){
+            if(!keys.contains(letter) && values.contains(letter)){
                 start = letter;
+                keys.add(letter);
             }
+
             mymap.put(letter, new Character[]{letter, value});
         }
         sb.append(start);

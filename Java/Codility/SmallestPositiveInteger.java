@@ -28,4 +28,19 @@ public class SmallestPositiveInteger {
 
         return smallest;
     }
+
+    public int solution2(int[] A) {
+        // Implement your solution here
+        Map<Integer, Integer> map = new HashMap<>();
+        for(Integer num: A){
+            if(!map.containsKey(num)) map.put(num, num);
+        }
+
+        int result = 1;
+        for(Integer num: A){
+            if(!map.containsKey(result))return result;
+            else result+=1;
+        }
+        return result;
+    }
 }
