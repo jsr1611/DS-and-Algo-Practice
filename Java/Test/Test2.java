@@ -12,6 +12,7 @@ import java.util.HashMap;
  */
 
 public class Test2 {
+    private interface asa extends AutoCloseable{}
     public static void main(String[] args) {
         HashMap<String, Integer> map = new HashMap<>();
 
@@ -21,5 +22,6 @@ public class Test2 {
         int currentApples = map.get("Apples");
         map.put("Apples", currentApples+4);
         System.out.println(map.get("Apples"));
+
     }
 }

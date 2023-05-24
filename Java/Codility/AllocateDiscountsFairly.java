@@ -32,14 +32,63 @@
 
 
 import java.util.Arrays;
+import java.util.Map;
+import java.util.Stack;
 
 public class AllocateDiscountsFairly {
     public static void main(String[] args) {
-
+        String[] arr = {"300.00", "200.00", "100.00"};
+        System.out.println(Arrays.toString(solution("300.01", arr)));
     }
-    public String[] solution(String S, String[] B){
-
+    public static String[] solution(String S, String[] B){
+        float excess = Float.parseFloat(S);
+        float[] invoices = new float[B.length];
+        Stack<Float> invoices_s = new Stack<>();
+        Float max = null;
+        int maxIndex = 0;
+        float total = 0;
+        for (int i=0; i < B.length; i++){
+            invoices[i] = Float.parseFloat(B[i]);
+            invoices_s.add(Float.parseFloat(B[i]));
+            total += invoices[i];
+            if(max==null) {
+                max = invoices[i];
+                maxIndex = i;
+            }
+            else if(max < invoices[i]) {
+                max = invoices[i];
+                maxIndex = i;
+            }
+        }
+        int count= 0;
+        float excessReturned;
+        while (count < B.length){
+            System.out.println(invoices[maxIndex]);
+            excessReturned = excess * invoices[maxIndex] / total;
+            excess -= excessReturned;
+            B[maxIndex] = String.format("%.2f%n", excessReturned);
+            maxIndex = getNextMax(maxIndex, invoices);
+            count++;
+        }
         return B;
+    }
+
+    private static int getNextMax(int maxIndex, float[] invoices) {
+        float max = invoices[maxIndex];
+        Float nextMax = null;
+        int index = 0;
+        for (int i=0; i < invoices.length; i++){
+            if(nextMax == null){
+                if(i == maxIndex) continue;
+                nextMax = invoices[i];
+                index = i;
+            }
+            else if(nextMax < invoices[i] && i != maxIndex){
+                nextMax = invoices[i];
+                index = i;
+            }
+        }
+        return index;
     }
 
 }

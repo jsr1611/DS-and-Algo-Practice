@@ -1,6 +1,13 @@
-# Data Structures and Algorithm Practice Solutions
-This branch contains solutions for the problems in the "Starter" branch of this repo. Here I will be posting my solutions for the DS and Algo problems in different platforms.
-Feel free to hit the issue or PR if you have an optimized version of the solution.
+# Data Structures and Algorithm Problem Solutions
+This branch contains my solutions for the DS and Algo problems from different platforms such HackerRank, LeetCode, BinarySearch704, Codility, etc. 
+Feel free to hit the issue or PR if you can optimize the problem solution.
 
-
-Link for the problems branch: [DS and Algo Practice Starter](https://github.com/jsr1611/DS-and-Algo-Practice/tree/Starter)
+### [LeetCode](https://leetcode.com/jsr1611/)
+### [HackerRank](https://www.hackerrank.com/jumanazarsaidov?hr_r=1)
+### [BinarySearch704](https://binarysearch.com/@/jumanazar)
+### [Codility](#no-link)
+### [CodeSignal](https://app.codesignal.com/profile/jumanazar_s)
+### [CodingBat](#no-link)
+### [Advent of Code](#no-link)
+### [Programmers](#no-links)
+### [RoboContest](https://robocontest.uz/profile/jumanazarsaid)
