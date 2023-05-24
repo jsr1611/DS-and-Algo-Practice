@@ -38,4 +38,22 @@ public class Kata
         Arrays.sort(arr);
         return arr[0] == arr[1] ? arr[arr.length-1]: arr[0];
     }
+
+    static String encode(String word){
+        // problem: https://www.codewars.com/kata/54b42f9314d9229fd6000d9c/train/java
+
+        //solution(s):
+        word = word.toLowerCase();
+        StringBuilder result = new StringBuilder();
+        String[] strArr = word.split("");
+        int charIndex = 0;
+        for(String str: strArr){
+            charIndex = word.indexOf(str);
+            if(word.lastIndexOf(str) != charIndex)
+                result.append(")");
+            else
+                result.append("(");
+        }
+        return result.toString();
+    }
 }
