@@ -1,3 +1,7 @@
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.Set;
 
 /*
 Given an array of integers, where all elements but one occur twice, find the unique element.
@@ -27,18 +31,26 @@ The second line contains  space-separated integers that describe the values in .
  * The function is expected to return an INTEGER.
  * The function accepts INTEGER_ARRAY a as parameter.
  */
+public class LonelyInteger {
 
-public static int lonelyinteger(List<Integer> a) {
+
+    public static int lonelyinteger(List<Integer> a) {
         // Write your code here
-    Map<Integer, Integer> map = new HashMap<>();
-    for(int i: a){
-        if(map.containsKey(i)){
-            map.remove(i);
+        Map<Integer, Integer> map = new HashMap<>();
+        for (int i : a) {
+            if (map.containsKey(i)) {
+                map.remove(i);
+            } else {
+                map.put(i, 0);
+            }
         }
-        else{
-            map.put(i, 0);
-        }
+        Set<Integer> num = map.keySet();
+        return num.iterator().next();
     }
-    Set<Integer> num = map.keySet();
-    return num.iterator().next();
 }
+
+
+
+
+
+

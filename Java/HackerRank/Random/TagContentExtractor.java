@@ -59,7 +59,7 @@ import java.text.*;
 import java.math.*;
 import java.util.regex.*;
 
-public class Solution{
+public class TagContentExtractor{
     public static void main(String[] args){
 
         Scanner in = new Scanner(System.in);
@@ -78,11 +78,11 @@ public class Solution{
                 else if(startTag+1 == endTag){
                     line = line.substring(endTag+1);
                     //System.out.println("None: " + line);
-                    if(line.contains("<"")){
-                    continue;
-                }
+                    if(line.contains("<")){
+                        continue;
+                    }
 
-            }
+                }
 
             startTag = line.indexOf("<");
             endTag = line.indexOf(">");
@@ -118,7 +118,7 @@ public class Solution{
                         line = line.substring(endTag+1);
                     }
                     else{
-                        // System.out.print("None");
+//                        System.out.print("None");
                         // break;
                     }
 
