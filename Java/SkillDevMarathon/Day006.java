@@ -1,5 +1,4 @@
-import java.util.HashMap;
-import java.util.Map;
+import java.util.*;
 
 public class Day006 {
     /*
@@ -39,4 +38,46 @@ public class Day006 {
 
         return result;
     }
+
+
+    /*
+    @description 12. Integer to Roman
+    @author jsr1611
+    @reference https://leetcode.com/problems/integer-to-roman/
+     */
+    public String intToRoman(int num){
+        StringBuilder result = new StringBuilder();
+        Map<Integer, String> romans = new TreeMap<>();
+        romans.put(1000, "M");
+        romans.put(900, "CM");
+        romans.put(500, "D");
+        romans.put(400, "CD");
+        romans.put(100, "C");
+        romans.put(90, "XC");
+        romans.put(50, "L");
+        romans.put(40, "XL");
+        romans.put(10, "X");
+        romans.put(9, "IX");
+        romans.put(5, "V");
+        romans.put(4, "IV");
+        romans.put(1, "I");
+
+        List<Integer> keys = new ArrayList(romans.keySet());
+        Collections.reverse(keys);
+        int pref = 0;
+        while (num > 0){
+            for (Integer key : keys) {
+                if(num >= key){
+                    pref = num / key;
+                    while (pref > 0){
+                        result.append(romans.get(key));
+                        pref--;
+                    }
+                    num %= key;
+                }
+            }
+        }
+        return result.toString();
+    }
+
 }
