@@ -12,4 +12,28 @@ public class Day010 {
         }
         return result;
     }
+
+
+    /*
+    @description 189. Rotate Array
+    @author jsr1611
+    @reference https://leetcode.com/problems/rotate-array/
+     */
+    public void rotate(int[] nums, int k){
+        int length = nums.length;
+        int source = 0;
+        int target = 0;
+        for (int i=0; i < length; i++){
+            target = (target + k) % length;
+            if(source == target){
+                source++;
+                target++;
+            }
+            else {
+                int tmp = nums[target];
+                nums[target] = nums[source];
+                nums[source] = tmp;
+            }
+        }
+    }
 }
