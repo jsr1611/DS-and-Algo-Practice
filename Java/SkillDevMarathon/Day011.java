@@ -1,4 +1,5 @@
 import java.util.*;
+import java.util.stream.Collectors;
 
 public class Day011 {
 
@@ -35,25 +36,31 @@ public class Day011 {
     public List<List<Integer>> findMatrix(int[] nums) {
         List<List<Integer>> result = new ArrayList<>();
         List<Integer> row = new ArrayList<>();
+        List<Integer> repetitive = new ArrayList<>();
+        List<Integer> arr = Arrays.stream(nums).boxed().collect(Collectors.toList());
         int count = 0;
         int curElem;
         int length = nums.length;
         Set<Integer> rowNums = new HashSet<>();
         while (count < length){
-            curElem = nums[count++];
+            curElem = arr.get(count++);
             if(!rowNums.contains(curElem)){
                 rowNums.add(curElem);
                 row.add(curElem);
-                if(count == length){
-                    result.add(row);
-                }
+
             }else {
-                result.add(row);
+                repetitive.add(curElem);
+            }
+            if(count == length){
+                result.add(new ArrayList<>(row));
                 rowNums = new HashSet<>();
                 row = new ArrayList<>();
+                count = 0;
+                arr = new ArrayList<>(repetitive);
+                length = arr.size();
+                repetitive = new ArrayList<>();
             }
         }
         return result;
     }
-
 }
