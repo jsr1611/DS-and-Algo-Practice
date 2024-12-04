@@ -14,7 +14,8 @@ public class Solution {
     private static final int[] DY = {-1, 0, 1, -1, 1, -1, 0, 1}; // Column direction
 
     public static void main(String[] args) {
-        System.out.println(solve(1));
+//        System.out.println(solve(1));
+        System.out.println(solve(2));
     }
 
 
@@ -24,24 +25,59 @@ public class Solution {
         try (BufferedReader reader = new BufferedReader(new FileReader(fileName))) {
             String line;
             System.out.println("File Content:");
-            Boolean flag = null;
             List<char[]> gridList = new ArrayList<>();
-
             while ((line = reader.readLine()) != null) {
                 char[] arr = line.toCharArray();
                 gridList.add(arr);
                 for (char c : arr) {
-                    System.out.print(c + ".");
+                    System.out.print(c + "");
                 }
                 System.out.println();
             }
+
             char[][] grid = gridList.toArray(new char[0][]);
-            totalCount = countOccurrences(grid, "XMAS");
+            // part 1
+            if (partNumber == 1) {
+                totalCount = countOccurrences(grid, "XMAS");
+            } else {
+                // part 2
+                totalCount = countPatternOccurrences(grid);
+            }
             return totalCount;
         } catch (IOException e) {
             e.printStackTrace();
         }
         return totalCount;
+    }
+
+    public static int countPatternOccurrences(char[][] grid) {
+        int rows = grid.length;
+        int cols = grid[0].length;
+        int count = 0;
+
+        // Iterate through each cell in the grid
+        for (int row = 1; row < rows - 1; row++) {
+            for (int col = 1; col < cols - 1; col++) {
+                // Check if the center is 'A' and apply the pattern
+                if (grid[row][col] == 'A' && check(grid, row, col)) {
+                    count++;
+                }
+            }
+        }
+        return count;
+    }
+
+    static boolean check(char[][] arr, int row, int col) {
+        char tl = arr[row - 1][col - 1]; // top-left
+        char bl = arr[row + 1][col - 1]; // bottom-left
+        char tr = arr[row - 1][col + 1]; // top-right
+        char br = arr[row + 1][col + 1]; // bottom-right
+        return (
+                (tl == 'M' && tr == 'M' && bl == 'S' && br == 'S') ||
+                        (tl == 'M' && tr == 'S' && bl == 'M' && br == 'S') ||
+                        (tl == 'S' && tr == 'M' && bl == 'S' && br == 'M') ||
+                        (tl == 'S' && tr == 'S' && bl == 'M' && br == 'M')
+        );
     }
 
 
